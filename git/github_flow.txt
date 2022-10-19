@@ -1,0 +1,10 @@
+github flow
+git flow より軽くて流れが単純なgit管理方法
+
+流れ
+新しいブランチ生成 : ブランチ名に意図を表す
+開発、commit、push
+PR(Pull Request)生成
+レビュー
+テスト
+最終Merge
