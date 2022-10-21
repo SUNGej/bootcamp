@@ -1,0 +1,15 @@
+作業内容
+#shellの array, arguments, environment_variable, stdin, stdout, stderr, pipeについて調べ、例文作成
+渡した引数によって決められた処理を行う shell script 作成
+
+見積もり時間
+5時間
+
+実績時間
+5時間
+
+週間の目標稼働時間・実績時間
+25時間・25時間
+
+質問・感想
+考え方をリフレッシュする方法は何があるでしょうか。
