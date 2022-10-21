@@ -1,0 +1,34 @@
+linux command example
+
+pwd
+ulkenfkaus@ulkenfkaus-virtual-machine:~$ pwd(return)
+/home/ulkenfkaus
+現在ディレクトリの情報を見る
+
+cd
+ulkenfkaus@ulkenfkaus-virtual-machine:~$ cd bootcamp(return)
+bootcampディレクトリに移動
+
+ls
+ulkenfkaus@ulkenfkaus-virtual-machine:~/bootcamp$ ls -a(return)
+.  ..  .git  git  log  README.md  shell
+現在ディレクトリ内の隠したものを含めた全てのファイルやディレクトリおみる
+
+mkdir
+lkenfkaus@ulkenfkaus-virtual-machine:~/bootcamp$ mkdir ruby
+rubyと名付けたディレクトリを作る
+
+touch
+ulkenfkaus@ulkenfkaus-virtual-machine:~/bootcamp$ touch README.md
+README.mdファイルの最近アップデート日時を現在の時間に変える
+ulkenfkaus@ulkenfkaus-virtual-machine:~/bootcamp$ ls README.md -l
+-rw------- 1 ulkenfkaus ulkenfkaus 76 10월 19 15:10 README.md
+
+rm
+ulkenfkaus@ulkenfkaus-virtual-machine:~/bootcamp$ rm -r ruby
+-rを付けてディレクトリを削除
+
+mv
+ulkenfkaus@ulkenfkaus-virtual-machine:~/bootcamp$ mkdir test
+ulkenfkaus@ulkenfkaus-virtual-machine:~/bootcamp$ mv test ~/
+testディレクトリを上位ディレクトリに移動
