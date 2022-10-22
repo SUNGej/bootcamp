@@ -1,1 +1,0 @@
-stdinouterr-redirect-using-arguments.sh: 8: no-command: not found
