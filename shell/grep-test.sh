@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-printf "this is .sh file to print line which has echo in this file"
+printf "this is .sh file to print line which has echo in this file."
 
 echo 1
 echo 2
