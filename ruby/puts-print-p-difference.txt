@@ -1,0 +1,16 @@
+puts
+auto newline
+can't see nil
+array's all elements printed in each line
+
+print
+no newline
+can't see nil
+array's all elements printed in one line
+to do newline, add print("\n") or print "\n"
+
+p
+auto newline
+can see nil
+array's all elements printed in each line
+string is covered with " "
