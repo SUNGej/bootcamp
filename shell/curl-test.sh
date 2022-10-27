@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-echo this is search on google.com using arguments.
+echo "this is search on google.com using arguments."
 
 search_argument=$1
 
