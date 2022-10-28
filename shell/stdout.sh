@@ -1,3 +1,3 @@
 #! /usr/bin/bash
 
-echo $SHELL > shell-information.txt
+echo "${SHELL}" > shell-information.txt

@@ -1,3 +1,3 @@
 #! /bin/bash
-echo hello
-echo this is .sh file to print hello
+echo "hello"
+echo "this is .sh file to print hello"
