@@ -41,3 +41,12 @@ p "array_empty_three_space", array_empty_three_space
 array_three_new = Array.new(3, "new")
 p "array_three_new", array_three_new
 
+puts
+
+array = [1, 2, 3, 4, 5]
+print "array = ", array, "\n"
+
+puts "do array.insert(3, 10, 11, 12).delete_at(-1).delete_at(0)"
+array.insert(3, 10, 11, 12).delete_at(-1)
+print "array = ", array, "\n"
+
