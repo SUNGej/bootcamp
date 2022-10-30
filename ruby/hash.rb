@@ -28,8 +28,7 @@ puts
 
 puts "delete in hash"
 hash.delete(:key4)
-hash.each {
-  |key, value|
+hash.each { |key, value|
   print "key : ", key, ", value : ", value, "\n"
 }
 
@@ -66,8 +65,14 @@ puts
 
 puts "loop of Hash"
 
-hash4.each { |key, value| print "key : ", key, ", value : ", value, "\n" }
+hash4.each { |key, value|
+  print "key : ", key, ", value : ", value, "\n"
+}
 
-hash4.each_key { |key| print "key : ", key, "\n" }
+hash4.each_key {
+  |key| print "key : ", key, "\n"
+}
 
-hash4.each_value { |value| print "value : ", value, "\n" }
+hash4.each_value { |value|
+  print "value : ", value, "\n"
+}
