@@ -13,7 +13,7 @@ boolean = false
 variable_return_of_if =
   if boolean
     "run when boolean is true"
-  elsif !boolean
+  else
     "run when boolean is false"
   end
 print "variable_return_of_if = ", variable_return_of_if, "\n"
@@ -24,7 +24,7 @@ boolean = true
 variable_return_of_if =
   if boolean
     puts "run when boolean is true"
-  elsif !boolean
+  else
     puts "run when boolean is false"
   end
 print "variable_return_of_if = ", variable_return_of_if, "\n"
