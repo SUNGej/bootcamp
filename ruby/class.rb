@@ -11,11 +11,11 @@ class Man
     @age = age
   end
   
-  def printName
+  def print_name
     puts @name
   end
   
-  def printAge
+  def print_age
     puts @age
   end
   
@@ -44,9 +44,9 @@ Man.hello
 sung = Man.new("Sung", 25)
 
 puts "What is your name?"
-sung.printName
+sung.print_name
 puts "How old are you?"
-sung.printAge
+sung.print_age
 
 puts
 
