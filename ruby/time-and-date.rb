@@ -39,21 +39,3 @@ print "sunday_this_week.wday = ", sunday_this_week.wday, "\n"
 print "monday_this_week.wday = ", monday_this_week.wday, "\n"
 print "saturday_this_week.wday = ", saturday_this_week.wday, "\n"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
