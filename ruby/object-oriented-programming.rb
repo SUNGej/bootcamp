@@ -65,7 +65,7 @@ person_sung.sleep
 
 class Male < Person
   
-  @@gender = "male"
+  @@Gender = "male"
   
   def gender
     print @name, " is ", @@gender, "\n"
