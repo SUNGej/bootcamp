@@ -6,88 +6,73 @@ class Clothes
     @dirty = dirty
   end
   
-  def dirty?
-    return @dirty
-  end
+  attr_accessor :dirty
   
 end
 
 class LaundryMachine
 
   MAX_CAPACITY = 30
+  MINUMUM_TIME = 40
   
   def initialize
-    @current_capacity = 0
-    @clothes = Array.new(MAX_CAPACITY)
+    @clothes = Array.new()
   end
   
-  def put_in_clothes
-    if @current_capacity == MAX_CAPACITY
-      puts "Machine is full! can't put in more clothes!"
-    else
-      print "Put out a clothes"
-      @clothes[@current_capacity] = Clothes.new(true)
-      @current_capacity += 1
-      print "  current capacity is ", @current_capacity, "\n"
-    end
+  def put_in_clothes(number)
+    number.times {
+      print "Put in a clothes."
+      @clothes.push(Clothes.new(true))
+      print "  Current capacity is ", @clothes.size, ".\n"
+      if @clothes.size == MAX_CAPACITY
+        puts "Machine is full! can't put in more clothes!"
+        break
+      end
+    }
   end
-  def put_out_clothes
-    if @current_capacity == 0
-      puts "There is not clothes!"
-    else
-      @clothes.delete_at(@current_capacity - 1)
-      @current_capacity -= 1
+  
+  def put_out_clothes(number)
+    number.times {
+      @clothes.pop
       print "Put out a clothes."
-      print "  current capacity is ", @current_capacity, "\n"
-    end
-  end
-  def wash
-    for number in 0...@current_capacity
-      @clothes.at(number).dirty = false
-    end
-    puts "Washed all clothes!"
+      print "  Current capacity is ", @clothes.size, ".\n"
+      if @clothes.empty?
+        puts "There is not clothes!"
+        break
+      end
+    }
   end
   
-  attr_accessor :current_capacity, :clothes, :MAX_CAPACITY
+  def wash
+    puts "Wash start!"
+    print "Finish after ", MINUMUM_TIME + @clothes.size * 2, " minutes.\n"
+    @clothes.shuffle
+    @clothes.each { |clothes|
+      clothes.dirty = false
+    }
+    puts "Finished. Washed all clothes!"
+  end
+  
+  attr_accessor :clothes
+  attr_reader :MINUMUM_TIME, :MAX_CAPACITY
   
 end
 
 laundry_machine = LaundryMachine.new
 
-for number in 1..33
-  laundry_machine.put_in_clothes
-end
+laundry_machine.put_in_clothes(35)
 
+puts "In laundry machine now"
 p laundry_machine.clothes
 
 laundry_machine.wash
 
+puts "In laundry machine now"
 p laundry_machine.clothes
 
-for number in 1..32
-  laundry_machine.put_out_clothes
-end
+laundry_machine.put_out_clothes(33)
 
-puts
-
-for number in 1..20
-  laundry_machine.put_in_clothes
-end
-
+puts "In laundry machine now"
 p laundry_machine.clothes
-
-laundry_machine.wash
-
-p laundry_machine.clothes
-
-for number in 1..10
-  laundry_machine.put_out_clothes
-end
-
-p laundry_machine.clothes
-
-for number in 1..10
-  laundry_machine.put_out_clothes
-end
-
 print "Is Laundry machine empty? ", laundry_machine.clothes.empty?, "\n"
+
