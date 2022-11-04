@@ -7,81 +7,80 @@ class Task
 
 end
 
-def print_usage
-  puts "usage"
-end
+class Processor
 
-def check_option_omitted(option_string)
-  case option_string
-  when "s"
-    option_start
-  when "f"
-    option_finish
-  when "vt"
-    option_view_today
-  when "vw"
-    option_view_week
-  else
-    print_usage
+  def initialize(argument1, argument2)
+    @first_argument = argument1
+    @second_argument = argument2
+    check_option_argument(@first_argument)
   end
-end
-
-def check_option_full(option_string)
-  case option_string
-  when "start"
-    option_start
-  when "finish"
-    option_finish
-  when "view-today"
-    option_view_today
-  when "view-week"
-    option_view_week
-  else
-    print_usage
+  
+  def check_option_argument(option_argument)
+    first_character = option_argument[0]
+    second_character = option_argument[1]
+    if first_character == "-"
+      if second_character == "-"
+        option_string = option_argument[2..-1]
+      else
+        option_string = option_argument[1..-1]
+      end
+      check_option(option_string)
+    else
+      print_usage
+    end
   end
-end
-
-def option_start
-  puts "start"
-end
-
-def option_finish
-  puts "finish"
-end
-
-def option_view_today
-  puts "view-today"
-end
-
-def option_view_week
-  puts "view-week"
-end
-
-argument_array = ARGV
-puts argument_array.length
-first_argument = ARGV[0]
-second_argument = ARGV[1]
-puts "first_argument", first_argument
-puts "second_argument", second_argument
-
-first_argument_first_character = first_argument[0]
-first_argument_second_character = first_argument[1]
-
-
-puts "first_argument_first_character", first_argument_first_character
-puts "first_argument_second_character", first_argument_second_character
-
-if first_argument_first_character == "-"
-  if first_argument_second_character == "-"
-    first_argument_option_string = first_argument[2..-1]
-    check_option_full(first_argument_option_string)
-  else
-    first_argument_option_string = first_argument[1..-1]
-    check_option_omitted(first_argument_option_string)
+  
+  def check_option(option_string)
+    case option_string
+    when "s"
+      option_start
+    when "start"
+      option_start
+    when "f"
+      option_finish
+    when "finish"
+      option_finish
+    when "vt"
+      option_view_today
+    when "view-today"
+      option_view_today
+    when "vw"
+      option_view_week
+    when "view-week"
+      option_view_week
+    else
+      print_usage
+    end
   end
-else
-  print_usage
+  
+  def print_usage
+    puts "usage"
+  end
+  
+  def option_start
+    puts "start"
+  end
+
+  def option_finish
+    puts "finish"
+  end
+
+  def option_view_today
+    puts "view-today"
+  end
+
+  def option_view_week
+    puts "view-week"
+  end
+  
+  
+  
 end
+
+
+
+
+Processor.new(ARGV[0], ARGV[1])
 
 
 
